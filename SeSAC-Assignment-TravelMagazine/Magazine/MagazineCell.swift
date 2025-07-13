@@ -11,12 +11,14 @@ class MagazineCell: UITableViewCell {
     
     @IBOutlet var mainImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var subTitleLabel: UILabel!
+    @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var postDateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        mainImageView.layer.cornerRadius = 15
+        mainImageView.clipsToBounds = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
