@@ -16,8 +16,12 @@ class Game369ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        designTextField()
     }
     
+    private func designTextField() {
+        maxNumberInputTextField.layer.borderColor = UIColor.black.cgColor
+        maxNumberInputTextField.layer.borderWidth = 1
+    }
     
 }

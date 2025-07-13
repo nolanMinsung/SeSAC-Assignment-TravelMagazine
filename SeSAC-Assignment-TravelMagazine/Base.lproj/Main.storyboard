@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vU0-Hg-yig">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -65,17 +66,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="최대 숫자를 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jX4-4Q-dmd">
-                                <rect key="frame" x="81.666666666666686" y="118" width="230" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="최대 숫자를 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jX4-4Q-dmd">
+                                <rect key="frame" x="81.666666666666686" y="168" width="230" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1M6-yO-T3n"/>
                                     <constraint firstAttribute="width" constant="230" id="ThA-ne-iHs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EJl-Oz-eu0">
-                                <rect key="frame" x="70" y="208" width="253" height="160"/>
+                                <rect key="frame" x="70" y="258" width="253" height="160"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="45v-hq-vaH"/>
@@ -86,7 +87,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3o-wO-b3H">
-                                <rect key="frame" x="70" y="418" width="253" height="30"/>
+                                <rect key="frame" x="70" y="468" width="253" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -102,7 +103,7 @@
                             <constraint firstItem="pUa-Ge-9VA" firstAttribute="trailing" secondItem="EJl-Oz-eu0" secondAttribute="trailing" constant="70" id="bqn-F0-Iu4"/>
                             <constraint firstItem="jX4-4Q-dmd" firstAttribute="centerX" secondItem="cjv-sX-FeX" secondAttribute="centerX" id="nIS-d6-you"/>
                             <constraint firstItem="pUa-Ge-9VA" firstAttribute="trailing" secondItem="v3o-wO-b3H" secondAttribute="trailing" constant="70" id="oGB-74-049"/>
-                            <constraint firstItem="jX4-4Q-dmd" firstAttribute="top" secondItem="pUa-Ge-9VA" secondAttribute="top" id="w6V-a5-s6D"/>
+                            <constraint firstItem="jX4-4Q-dmd" firstAttribute="top" secondItem="pUa-Ge-9VA" secondAttribute="top" constant="50" id="w6V-a5-s6D"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="bfi-dv-I70"/>
