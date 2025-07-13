@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 class MagazineTableViewController: UITableViewController {
     
     let magazinePosts: [Magazine] = MagazineInfo().magazine
@@ -31,7 +33,7 @@ extension MagazineTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MagazineCell", for: indexPath) as? MagazineCell else {
             fatalError()
         }
-//        cell.mainImageView.image = UIImage(systemName: "house")
+        cell.mainImageView.kf.setImage(with: post.imageURL)
         cell.titleLabel.text = post.title
         cell.subtitleLabel.text = post.subtitle
         cell.postDateLabel.text = post.dateInString
