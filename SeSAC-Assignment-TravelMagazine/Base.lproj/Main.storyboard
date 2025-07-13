@@ -64,14 +64,57 @@
                     <view key="view" contentMode="scaleToFill" id="cjv-sX-FeX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="최대 숫자를 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jX4-4Q-dmd">
+                                <rect key="frame" x="81.666666666666686" y="118" width="230" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1M6-yO-T3n"/>
+                                    <constraint firstAttribute="width" constant="230" id="ThA-ne-iHs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EJl-Oz-eu0">
+                                <rect key="frame" x="70" y="208" width="253" height="160"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="45v-hq-vaH"/>
+                                </constraints>
+                                <string key="text">1, 2, 👏, 4, 5, 👏, 7, 8, 👏, 10, 11, 12, 1👏, 14, 15, 1👏, 17, 18, 1👏, 20, 21, 22, 2👏, 24, 25, 2👏, 27, 28, 2👏, 👏0, 👏1, 👏2, 👏👏, 👏4, 👏5, 👏👏, 👏7</string>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3o-wO-b3H">
+                                <rect key="frame" x="70" y="418" width="253" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pUa-Ge-9VA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EJl-Oz-eu0" firstAttribute="top" secondItem="jX4-4Q-dmd" secondAttribute="bottom" constant="40" id="CLT-ZX-oWc"/>
+                            <constraint firstItem="v3o-wO-b3H" firstAttribute="leading" secondItem="pUa-Ge-9VA" secondAttribute="leading" constant="70" id="Qft-ZV-cFx"/>
+                            <constraint firstItem="v3o-wO-b3H" firstAttribute="top" secondItem="EJl-Oz-eu0" secondAttribute="bottom" constant="50" id="W7L-rF-2Ap"/>
+                            <constraint firstItem="EJl-Oz-eu0" firstAttribute="leading" secondItem="pUa-Ge-9VA" secondAttribute="leading" constant="70" id="Xbk-hm-VLw"/>
+                            <constraint firstItem="pUa-Ge-9VA" firstAttribute="trailing" secondItem="EJl-Oz-eu0" secondAttribute="trailing" constant="70" id="bqn-F0-Iu4"/>
+                            <constraint firstItem="jX4-4Q-dmd" firstAttribute="centerX" secondItem="cjv-sX-FeX" secondAttribute="centerX" id="nIS-d6-you"/>
+                            <constraint firstItem="pUa-Ge-9VA" firstAttribute="trailing" secondItem="v3o-wO-b3H" secondAttribute="trailing" constant="70" id="oGB-74-049"/>
+                            <constraint firstItem="jX4-4Q-dmd" firstAttribute="top" secondItem="pUa-Ge-9VA" secondAttribute="top" id="w6V-a5-s6D"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="bfi-dv-I70"/>
+                    <connections>
+                        <outlet property="maxNumberInputTextField" destination="jX4-4Q-dmd" id="dnk-Nn-MP4"/>
+                        <outlet property="resultLabel" destination="v3o-wO-b3H" id="cvQ-ec-TRf"/>
+                        <outlet property="resultTextView" destination="EJl-Oz-eu0" id="ojy-5R-zMS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylv-1Q-Z3q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1251" y="-674"/>
+            <point key="canvasLocation" x="1249.6183206106871" y="-674.64788732394368"/>
         </scene>
         <!--Item-->
         <scene sceneID="IAl-n0-IXB">
