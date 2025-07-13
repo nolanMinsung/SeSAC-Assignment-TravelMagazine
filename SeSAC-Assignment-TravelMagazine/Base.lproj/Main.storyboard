@@ -73,7 +73,10 @@
                                     <constraint firstAttribute="width" constant="230" id="ThA-ne-iHs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <action selector="textFieldDidEndOnExit:" destination="RAX-EQ-iae" eventType="editingDidEndOnExit" id="sCr-u5-T78"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EJl-Oz-eu0">
                                 <rect key="frame" x="70" y="258" width="253" height="160"/>
@@ -81,7 +84,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="45v-hq-vaH"/>
                                 </constraints>
-                                <string key="text">1, 2, 👏, 4, 5, 👏, 7, 8, 👏, 10, 11, 12, 1👏, 14, 15, 1👏, 17, 18, 1👏, 20, 21, 22, 2👏, 24, 25, 2👏, 27, 28, 2👏, 👏0, 👏1, 👏2, 👏👏, 👏4, 👏5, 👏👏, 👏7</string>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

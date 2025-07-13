@@ -21,7 +21,7 @@ struct Game369Manager {
         guard !trimmedText.contains("."), let intValue = Int(trimmedText) else {
             throw Game369Error.inputNotInteger
         }
-        guard intValue > 0 else {
+        guard 0 < intValue && intValue <= 10000 else {
             throw Game369Error.inputOutOfRange
         }
         return intValue
@@ -30,6 +30,9 @@ struct Game369Manager {
     func show369Numbers(maxNumber: Int) -> (String, Int) {
         var clapCount: Int = 0
         let fullNumbers = (1...maxNumber)
+        // 개선 필요.
+        // map을 사용하면 큰 수가 들어올 때 성능 저하가 발생하는 것을 확인.
+        // 현재는 임시로 10000까지만 입력받도록 제한함.
         let returnValue = fullNumbers.map { number in
             let (convertingResult, newClapCount) = convertTextToClapEmojiString(number)
             clapCount += newClapCount

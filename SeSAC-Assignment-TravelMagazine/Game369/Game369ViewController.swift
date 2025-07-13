@@ -17,11 +17,44 @@ class Game369ViewController: UIViewController {
         super.viewDidLoad()
         
         designTextField()
+        initialSettings()
     }
     
     private func designTextField() {
         maxNumberInputTextField.layer.borderColor = UIColor.black.cgColor
         maxNumberInputTextField.layer.borderWidth = 1
     }
+    
+    private func initialSettings() {
+        resultTextView.isEditable = false
+    }
+    
+    @IBAction func textFieldDidEndOnExit(_ sender: UITextField) {
+        let gameManager = Game369Manager()
+        do {
+            let validInputNumber = try gameManager.validateInputText(sender.text!)
+            let (resultString, totalClapCount) = gameManager.show369Numbers(maxNumber: validInputNumber)
+            resultTextView.text = resultString
+            resultLabel.text = "숫자 \(validInputNumber)까지 총 박수는 \(totalClapCount)번입니다."
+        } catch let error as Game369Error {
+            let messageToShow: String
+            switch error {
+            case .inputNotANumber, .inputNotInteger:
+                messageToShow = "정수만 입력해주세요."
+            case .inputOutOfRange:
+                messageToShow = "1 이상 10000 이하의 값만 입력해주세요."
+            }
+            resultLabel.text = messageToShow
+        } catch {
+            resultLabel.text = "에러가 발생했어요. 다시 시도해 주세요."
+        }
+    }
+    
+}
+
+// MARK: - 369 게임 관련 로직 -> Manager로 분리할 것
+private extension Game369ViewController {
+    
+    
     
 }
