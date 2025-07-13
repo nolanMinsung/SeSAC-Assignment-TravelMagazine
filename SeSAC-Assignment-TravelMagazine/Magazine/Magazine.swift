@@ -16,9 +16,15 @@ import UIKit
 //)
 
 struct Magazine {
-    static let dateFormatter = {
+    static let inputDateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyMMdd"
+        return formatter
+    }()
+    
+    static let outputDateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy년 MM월 dd일"
         return formatter
     }()
     
@@ -26,6 +32,7 @@ struct Magazine {
     let subtitle: String
     let imageURL: URL?
     let date: Date
+    var dateInString: String { Self.outputDateFormatter.string(from: self.date) }
     let linkURL: URL?
     
     init?(title: String, subtitle: String, photo_image: String, date: String, link: String) {
@@ -34,7 +41,7 @@ struct Magazine {
         self.imageURL = URL(string: photo_image)
         if self.imageURL == nil { print("image URL format of \(title) is invalid.") }
         
-        guard let date = Self.dateFormatter.date(from: date) else { return nil }
+        guard let date = Self.inputDateFormatter.date(from: date) else { return nil }
         self.date = date
         
         self.linkURL = URL(string: link)
