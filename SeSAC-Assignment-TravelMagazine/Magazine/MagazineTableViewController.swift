@@ -16,6 +16,9 @@ class MagazineTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let nib = UINib(nibName: "MagazineCell", bundle: .main)
+        tableView.register(nib, forCellReuseIdentifier: "MagazineCell")
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
 }
