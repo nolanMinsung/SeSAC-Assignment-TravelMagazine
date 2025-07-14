@@ -51,10 +51,3 @@ class Game369ViewController: UIViewController {
     }
     
 }
-
-// MARK: - 369 게임 관련 로직 -> Manager로 분리할 것
-private extension Game369ViewController {
-    
-    
-    
-}
