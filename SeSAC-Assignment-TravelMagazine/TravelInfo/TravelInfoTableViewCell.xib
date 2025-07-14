@@ -12,31 +12,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="212" id="KGk-i7-Jjw" customClass="TravelInfoTableViewCell" customModule="SeSAC_Assignment_TravelMagazine" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="435" height="212"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TravelInfoTableViewCell" rowHeight="286" id="KGk-i7-Jjw" customClass="TravelInfoTableViewCell" customModule="SeSAC_Assignment_TravelMagazine" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="421" height="286"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="435" height="212"/>
+                <rect key="frame" x="0.0" y="0.0" width="421" height="286"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hw4-Wg-nTk">
-                        <rect key="frame" x="16" y="16.000000000000004" width="267.33333333333331" height="41.333333333333343"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hw4-Wg-nTk">
+                        <rect key="frame" x="16" y="16.000000000000004" width="195.33333333333334" height="41.333333333333343"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="철도 박물관" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-aa-faV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="철도 박물관" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-aa-faV">
                                 <rect key="frame" x="0.0" y="0.0" width="77.333333333333329" height="20.333333333333332"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다양한 디자인의 제품이 있는 고급 모자 전문 매장" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55A-wy-2HC">
-                                <rect key="frame" x="0.0" y="24.333333333333336" width="267.33333333333331" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="다양한 디자인의 제품이 있는" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55A-wy-2HC">
+                                <rect key="frame" x="0.0" y="24.333333333333336" width="156.33333333333334" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ICw-W0-CEG">
+                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ICw-W0-CEG">
                         <rect key="frame" x="16" y="64" width="73" height="13"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DH9-O7-U0l">
@@ -84,15 +84,16 @@
                             <constraint firstAttribute="height" constant="13" id="SBF-3R-7ti"/>
                         </constraints>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="YWT-OS-P9j">
-                        <rect key="frame" x="299.33333333333331" y="16" width="119.66666666666669" height="159.66666666666666"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YWT-OS-P9j">
+                        <rect key="frame" x="227.33333333333337" y="16.000000000000014" width="177.66666666666663" height="236.33333333333337"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="CNO-jD-Sci"/>
-                            <constraint firstAttribute="width" secondItem="YWT-OS-P9j" secondAttribute="height" multiplier="3:4" id="VSs-IH-dny"/>
+                            <constraint firstAttribute="height" constant="163" id="uBj-2D-xU3"/>
+                            <constraint firstAttribute="width" secondItem="YWT-OS-P9j" secondAttribute="height" multiplier="100:133" id="yLE-GG-0FG"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2X1-Nb-RLV">
-                        <rect key="frame" x="383" y="16" width="36" height="36"/>
+                        <rect key="frame" x="369" y="16" width="36" height="36"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="36" id="bLm-Ia-g4c"/>
                             <constraint firstAttribute="width" constant="36" id="giO-NX-fyf"/>
@@ -104,8 +105,8 @@
                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="semibold"/>
                         </buttonConfiguration>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(1,812) • 저장 44,646" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO3-8I-x2c">
-                        <rect key="frame" x="93.000000000000014" y="63.333333333333336" width="190.33333333333337" height="14.333333333333336"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="(1,812) • 저장 44,646" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO3-8I-x2c">
+                        <rect key="frame" x="93" y="63.333333333333336" width="118.33333333333331" height="14.333333333333336"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <color key="textColor" systemColor="systemGray2Color"/>
                         <nil key="highlightedColor"/>
@@ -115,12 +116,12 @@
                     <constraint firstItem="ICw-W0-CEG" firstAttribute="centerY" secondItem="vO3-8I-x2c" secondAttribute="centerY" id="0Mn-mT-xPb"/>
                     <constraint firstAttribute="bottom" secondItem="YWT-OS-P9j" secondAttribute="bottom" constant="16" id="2eS-mk-vEI"/>
                     <constraint firstItem="hw4-Wg-nTk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Yut-Tv-JA7"/>
-                    <constraint firstItem="YWT-OS-P9j" firstAttribute="leading" secondItem="hw4-Wg-nTk" secondAttribute="trailing" constant="16" id="ZLp-7t-sFf"/>
                     <constraint firstItem="2X1-Nb-RLV" firstAttribute="top" secondItem="YWT-OS-P9j" secondAttribute="top" id="Zsh-Cn-jAu"/>
                     <constraint firstAttribute="trailing" secondItem="YWT-OS-P9j" secondAttribute="trailing" constant="16" id="eso-y7-np4"/>
                     <constraint firstItem="vO3-8I-x2c" firstAttribute="leading" secondItem="ICw-W0-CEG" secondAttribute="trailing" constant="4" id="gmb-rO-vS3"/>
+                    <constraint firstItem="YWT-OS-P9j" firstAttribute="leading" secondItem="hw4-Wg-nTk" secondAttribute="trailing" constant="16" id="hj2-P6-w5a"/>
                     <constraint firstItem="hw4-Wg-nTk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="lsW-UM-7jU"/>
-                    <constraint firstItem="YWT-OS-P9j" firstAttribute="leading" secondItem="vO3-8I-x2c" secondAttribute="trailing" constant="16" id="tKl-Qw-3wD"/>
+                    <constraint firstItem="hw4-Wg-nTk" firstAttribute="trailing" secondItem="vO3-8I-x2c" secondAttribute="trailing" id="tKl-Qw-3wD"/>
                     <constraint firstItem="YWT-OS-P9j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="tkx-97-jnL"/>
                     <constraint firstItem="YWT-OS-P9j" firstAttribute="trailing" secondItem="2X1-Nb-RLV" secondAttribute="trailing" id="uha-13-7FV"/>
                     <constraint firstItem="ICw-W0-CEG" firstAttribute="leading" secondItem="hw4-Wg-nTk" secondAttribute="leading" id="v2c-Hk-gnF"/>
@@ -129,11 +130,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="likeButton" destination="2X1-Nb-RLV" id="XpA-sG-gUh"/>
                 <outlet property="placeDescriptionLabel" destination="55A-wy-2HC" id="UJZ-fo-2OV"/>
+                <outlet property="placeImageView" destination="YWT-OS-P9j" id="k36-aS-jG7"/>
                 <outlet property="placeNameLabel" destination="Iav-aa-faV" id="qhj-YQ-L1z"/>
-                <outlet property="reviewInfoLabel" destination="vO3-8I-x2c" id="kFs-eF-edg"/>
+                <outlet property="saveInfoLabel" destination="vO3-8I-x2c" id="kFs-eF-edg"/>
             </connections>
-            <point key="canvasLocation" x="284.73282442748092" y="-10.563380281690142"/>
+            <point key="canvasLocation" x="135.1145038167939" y="-17.605633802816904"/>
         </tableViewCell>
     </objects>
     <resources>
