@@ -8,16 +8,29 @@
 import UIKit
 
 class TravelInfoTableAdCell: UITableViewCell {
-
+    
+    
+    @IBOutlet var contentBackgroundView: UIView!
+    @IBOutlet var adBadge: UILabel!
+    @IBOutlet var adTextLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        contentBackgroundView.layer.cornerRadius = 10
+        adBadge.layer.cornerRadius = 7
+        adBadge.clipsToBounds = true
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        adTextLabel.text = nil
+    }
+    
+    func configure(with item: Travel) {
+        guard item.ad == true else { fatalError() }
+        adTextLabel.text = item.title
     }
     
 }
