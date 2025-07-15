@@ -27,14 +27,7 @@ class CitySearchingTableViewCell: UITableViewCell {
     
     /// 컨텐츠를 채워봅시다.
     func configure(with item: City) {
-        placeImageView.kf.setImage(
-            with: item.imageURL,
-            options: [
-                .processor(DownsamplingImageProcessor(size: placeImageView.frame.size)),
-                .scaleFactor(UIScreen.main.scale),
-                .cacheMemoryOnly
-            ]
-        )
+        placeImageView.kf.setImage(with: item.imageURL)
         placeNameLabel.text = "\(item.koreanName) | \(item.englishName)"
         placeInfoLabel.text = item.explain
         

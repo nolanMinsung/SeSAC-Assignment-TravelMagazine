@@ -16,7 +16,7 @@
 
 import Foundation
 
-struct City {
+struct City: Hashable {
     let koreanName: String
     let englishName: String
     let explain: String // 배열로 만들어도 좋을 듯..!
