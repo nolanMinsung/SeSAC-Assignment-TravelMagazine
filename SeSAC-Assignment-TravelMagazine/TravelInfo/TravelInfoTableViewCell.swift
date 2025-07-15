@@ -22,10 +22,7 @@ class TravelInfoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         placeImageView.layer.cornerRadius = 10
-        likeButton.backgroundColor = .clear
-        likeButton.setImage(.init(systemName: "heart"), for: .normal)
-        likeButton.setImage(.init(systemName: "heart.fill"), for: .selected)
-        let clearImageView = UIImageView()
+        configureLikeButton()
     }
     
     override func prepareForReuse() {
@@ -33,6 +30,16 @@ class TravelInfoTableViewCell: UITableViewCell {
         
         placeImageView.image = nil
         likeButton.isSelected = false
+    }
+    
+    private func configureLikeButton() {
+        likeButton.configuration = UIButton.Configuration.plain()
+        likeButton.configuration?.baseBackgroundColor = .clear
+        likeButton.configurationUpdateHandler = { button in
+            button.configuration?.image = (button.isSelected
+                                          ? .init(systemName: "heart.fill")
+                                          : .init(systemName: "heart"))
+        }
     }
     
     func configure(with item: Travel) {
