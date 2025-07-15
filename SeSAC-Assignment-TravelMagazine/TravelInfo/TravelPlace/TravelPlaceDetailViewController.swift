@@ -7,7 +7,11 @@
 
 import UIKit
 
+import Kingfisher
+
 class TravelPlaceDetailViewController: UIViewController {
+    
+    var travelPlace: Travel? = nil
     
     @IBOutlet var travelImageView: UIImageView!
     @IBOutlet var placeNameLabel: UILabel!
@@ -15,13 +19,21 @@ class TravelPlaceDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        travelImageView.layer.cornerRadius = 15
+        if let travelPlace {
+            bindData(travelPlace: travelPlace)
+        }
     }
     
     @IBAction func popButtonTapped(_ sender: UIButton) {
-        
+        navigationController?.popViewController(animated: true)
     }
     
+    func bindData(travelPlace: Travel) {
+        travelImageView.kf.setImage(with: travelPlace.imageURL)
+        placeNameLabel.text = travelPlace.title
+        placeDescriptionLabel.text = travelPlace.description
+    }
     
 }

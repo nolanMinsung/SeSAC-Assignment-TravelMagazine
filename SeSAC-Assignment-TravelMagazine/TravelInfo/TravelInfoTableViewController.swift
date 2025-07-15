@@ -19,6 +19,8 @@ class TravelInfoTableViewController: UITableViewController {
         tableView.register(TravelCellNib, forCellReuseIdentifier: "TravelInfoTableViewCell")
         tableView.register(addCellNib, forCellReuseIdentifier: "TravelInfoTableAdCell")
         tableView.rowHeight = UITableView.automaticDimension
+        
+        navigationController?.navigationBar.tintColor = .label
     }
     
     
@@ -50,4 +52,22 @@ class TravelInfoTableViewController: UITableViewController {
         }
         
     }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = travelInfoPlaces[indexPath.row]
+        if item.ad {
+            // present modal in fullScreen...
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: .main)
+            let travelPlaceDetailVC = storyboard.instantiateViewController(
+                withIdentifier: "TravelPlaceDetailViewController"
+            ) as! TravelPlaceDetailViewController
+            travelPlaceDetailVC.travelPlace = item
+            navigationItem.backButtonTitle = ""
+            navigationController?.pushViewController(travelPlaceDetailVC, animated: true)
+        }
+        
+    }
+    
 }
