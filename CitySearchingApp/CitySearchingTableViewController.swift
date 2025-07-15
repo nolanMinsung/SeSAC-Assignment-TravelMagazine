@@ -9,6 +9,9 @@ import UIKit
 
 class CitySearchingTableViewController: UITableViewController {
     
+    // MARK: - DataSource
+    let cities = CityInfo().city
+    
     @IBOutlet var citySearchBar: UISearchBar!
     @IBOutlet var cityFilteringSegmentedControl: UISegmentedControl!
     
@@ -19,6 +22,7 @@ class CitySearchingTableViewController: UITableViewController {
         
         let nib = UINib(nibName: "CitySearchingTableViewCell", bundle: .main)
         tableView.register(nib, forCellReuseIdentifier: "CitySearchingTableViewCell")
+        tableView.rowHeight = 170
     }
     
     
@@ -29,16 +33,17 @@ class CitySearchingTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return cities.count
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = cities[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CitySearchingTableViewCell") as! CitySearchingTableViewCell
+        cell.configure(with: item)
+        return cell
+    }
     
 }
 

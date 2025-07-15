@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E46DBFA2E2362F60017841A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4E46DBF92E2362F60017841A /* Kingfisher */; };
+		4E919BFE2E264E88003BBF96 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4E919BFD2E264E88003BBF96 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E919BFE2E264E88003BBF96 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +164,7 @@
 				4E919BB62E263F0B003BBF96 /* CitySearchingApp */,
 				4E919BCD2E263F0D003BBF96 /* CitySearchingAppTests */,
 				4E919BD72E263F0D003BBF96 /* CitySearchingAppUITests */,
+				4E919BFC2E264E88003BBF96 /* Frameworks */,
 				4E46DB212E23443F0017841A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -177,6 +180,13 @@
 				4E919BD42E263F0D003BBF96 /* CitySearchingAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4E919BFC2E264E88003BBF96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +278,7 @@
 			);
 			name = CitySearchingApp;
 			packageProductDependencies = (
+				4E919BFD2E264E88003BBF96 /* Kingfisher */,
 			);
 			productName = CitySearchingApp;
 			productReference = 4E919BB52E263F0B003BBF96 /* CitySearchingApp.app */;
@@ -954,6 +965,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		4E46DBF92E2362F60017841A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E46DBF82E2362F60017841A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		4E919BFD2E264E88003BBF96 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4E46DBF82E2362F60017841A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;

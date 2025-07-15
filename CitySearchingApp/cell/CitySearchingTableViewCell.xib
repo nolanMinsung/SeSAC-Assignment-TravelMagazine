@@ -4,65 +4,85 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CitySearchingTableViewCell" rowHeight="143" id="KGk-i7-Jjw" customClass="CitySearchingTableViewCell" customModule="CitySearchingApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="381" height="143"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CitySearchingTableViewCell" rowHeight="146" id="KGk-i7-Jjw" customClass="CitySearchingTableViewCell" customModule="CitySearchingApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="384" height="146"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="381" height="143"/>
+                <rect key="frame" x="0.0" y="0.0" width="384" height="146"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kingfisher-3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tAP-Bo-vFm">
-                        <rect key="frame" x="12" y="6" width="357" height="131"/>
-                    </imageView>
-                    <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dk4-lb-dAi">
-                        <rect key="frame" x="12" y="112" width="357" height="25"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyd-6J-Gde">
+                        <rect key="frame" x="12" y="6" width="360" height="134"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kingfisher-3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tAP-Bo-vFm">
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="134"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dk4-lb-dAi">
+                                <rect key="frame" x="0.0" y="104" width="360" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방콕, 파타야, 후아힌, 코사멧, 코사무이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hU-g2-994">
+                                        <rect key="frame" x="8" y="6.6666666666666714" width="344" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="9hU-g2-994" firstAttribute="leading" secondItem="dk4-lb-dAi" secondAttribute="leading" constant="8" id="5hk-Yl-kHP"/>
+                                    <constraint firstItem="9hU-g2-994" firstAttribute="centerY" secondItem="dk4-lb-dAi" secondAttribute="centerY" id="O2B-91-l6Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="9hU-g2-994" secondAttribute="trailing" constant="8" id="O5g-iG-ebv"/>
+                                    <constraint firstAttribute="height" constant="30" id="vdz-Gj-pEg"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방콕 | BangKok" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXu-jb-dZc">
+                                <rect key="frame" x="209" y="11.999999999999998" width="139" height="26.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="vdz-Gj-pEg"/>
+                            <constraint firstItem="hXu-jb-dZc" firstAttribute="top" secondItem="tAP-Bo-vFm" secondAttribute="top" constant="12" id="0a2-If-ANF"/>
+                            <constraint firstAttribute="trailing" secondItem="tAP-Bo-vFm" secondAttribute="trailing" id="867-85-X4b"/>
+                            <constraint firstItem="tAP-Bo-vFm" firstAttribute="leading" secondItem="dyd-6J-Gde" secondAttribute="leading" id="9Dk-Ue-r1N"/>
+                            <constraint firstAttribute="bottom" secondItem="tAP-Bo-vFm" secondAttribute="bottom" id="Dh9-SF-utj"/>
+                            <constraint firstItem="tAP-Bo-vFm" firstAttribute="trailing" secondItem="hXu-jb-dZc" secondAttribute="trailing" constant="12" id="FFk-8M-px0"/>
+                            <constraint firstItem="tAP-Bo-vFm" firstAttribute="trailing" secondItem="dk4-lb-dAi" secondAttribute="trailing" id="Nzr-oj-5Xg"/>
+                            <constraint firstItem="tAP-Bo-vFm" firstAttribute="bottom" secondItem="dk4-lb-dAi" secondAttribute="bottom" id="cuV-GG-IRU"/>
+                            <constraint firstItem="dk4-lb-dAi" firstAttribute="leading" secondItem="tAP-Bo-vFm" secondAttribute="leading" id="eG6-FS-zMB"/>
+                            <constraint firstItem="tAP-Bo-vFm" firstAttribute="top" secondItem="dyd-6J-Gde" secondAttribute="top" id="tVc-k5-6cE"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방콕, 파타야, 후아힌, 코사멧, 코사무이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hU-g2-994">
-                        <rect key="frame" x="20" y="117.33333333333333" width="341" height="14.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방콕 | BangKok" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXu-jb-dZc">
-                        <rect key="frame" x="218" y="18" width="139" height="26.333333333333329"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="dk4-lb-dAi" firstAttribute="trailing" secondItem="9hU-g2-994" secondAttribute="trailing" constant="8" id="6Mk-hf-919"/>
-                    <constraint firstItem="tAP-Bo-vFm" firstAttribute="trailing" secondItem="dk4-lb-dAi" secondAttribute="trailing" id="SWL-Ha-bWM"/>
-                    <constraint firstItem="9hU-g2-994" firstAttribute="leading" secondItem="dk4-lb-dAi" secondAttribute="leading" constant="8" id="T0j-rZ-PJQ"/>
-                    <constraint firstItem="tAP-Bo-vFm" firstAttribute="bottom" secondItem="dk4-lb-dAi" secondAttribute="bottom" id="ZR7-Yw-64R"/>
-                    <constraint firstItem="tAP-Bo-vFm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="dim-mI-eEx"/>
-                    <constraint firstItem="tAP-Bo-vFm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="e8l-J3-tLC"/>
-                    <constraint firstItem="tAP-Bo-vFm" firstAttribute="trailing" secondItem="hXu-jb-dZc" secondAttribute="trailing" constant="12" id="lSS-lM-EvO"/>
-                    <constraint firstItem="9hU-g2-994" firstAttribute="centerY" secondItem="dk4-lb-dAi" secondAttribute="centerY" id="syw-g4-PVZ"/>
-                    <constraint firstItem="dk4-lb-dAi" firstAttribute="leading" secondItem="tAP-Bo-vFm" secondAttribute="leading" id="tpX-UT-TA3"/>
-                    <constraint firstAttribute="bottom" secondItem="tAP-Bo-vFm" secondAttribute="bottom" constant="6" id="vcG-63-T5S"/>
-                    <constraint firstItem="hXu-jb-dZc" firstAttribute="top" secondItem="tAP-Bo-vFm" secondAttribute="top" constant="12" id="vr4-Zj-7oq"/>
-                    <constraint firstAttribute="trailing" secondItem="tAP-Bo-vFm" secondAttribute="trailing" constant="12" id="yOJ-f4-hRU"/>
+                    <constraint firstAttribute="bottom" secondItem="dyd-6J-Gde" secondAttribute="bottom" constant="6" id="14o-EG-DI7"/>
+                    <constraint firstItem="dyd-6J-Gde" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Tww-6V-L5W"/>
+                    <constraint firstItem="dyd-6J-Gde" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="ggA-SQ-s49"/>
+                    <constraint firstAttribute="trailing" secondItem="dyd-6J-Gde" secondAttribute="trailing" constant="12" id="iYH-z1-Qti"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="contentsContainerView" destination="dyd-6J-Gde" id="xP3-K2-I4v"/>
+                <outlet property="placeImageView" destination="tAP-Bo-vFm" id="wv4-Fw-AjV"/>
                 <outlet property="placeInfoLabel" destination="9hU-g2-994" id="K8f-xA-1OK"/>
                 <outlet property="placeNameLabel" destination="hXu-jb-dZc" id="z6s-gE-lx9"/>
             </connections>
-            <point key="canvasLocation" x="382.44274809160305" y="76.408450704225359"/>
+            <point key="canvasLocation" x="384.73282442748092" y="74.647887323943664"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="kingfisher-3.jpg" width="250" height="250"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
