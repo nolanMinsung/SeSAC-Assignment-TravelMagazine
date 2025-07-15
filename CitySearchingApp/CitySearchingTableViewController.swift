@@ -16,6 +16,9 @@ class CitySearchingTableViewController: UITableViewController {
         super.viewDidLoad()
         
         citySearchBar.delegate = self
+        
+        let nib = UINib(nibName: "CitySearchingTableViewCell", bundle: .main)
+        tableView.register(nib, forCellReuseIdentifier: "CitySearchingTableViewCell")
     }
     
     
