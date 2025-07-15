@@ -20,6 +20,13 @@ class TravelPlaceDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /// Outlet 변수들은 viewDidLoad 호출 후 설정.
+        /// ...
+        /// UIKit reestablishes these connections before calling your view controller’s `viewDidLoad()` method,
+        /// so you can access the objects in those properties from that method.
+        /// ...
+        /// https://developer.apple.com/documentation/uikit/displaying-and-managing-views-with-a-view-controller#Store-references-to-important-views
+        
         travelImageView.layer.cornerRadius = 15
         if let travelPlace {
             bindData(travelPlace: travelPlace)

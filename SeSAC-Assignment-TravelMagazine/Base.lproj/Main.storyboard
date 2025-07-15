@@ -92,9 +92,9 @@
                                     <action selector="dismissButtonTapped:" destination="WbR-Ql-o2E" eventType="touchUpInside" id="GMX-Om-T9F"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광고 화면" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKH-iv-vZJ">
-                                <rect key="frame" x="156.33333333333334" y="126.99999999999999" width="80.666666666666657" height="26.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광고 화면" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKH-iv-vZJ">
+                                <rect key="frame" x="165.33333333333334" y="130" width="62.666666666666657" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

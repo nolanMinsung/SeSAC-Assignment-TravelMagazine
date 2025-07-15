@@ -23,7 +23,6 @@ class TravelInfoTableViewController: UITableViewController {
         navigationController?.navigationBar.tintColor = .label
     }
     
-    
     @objc private func likeButtonTapped(_ sender: UIButton) {
         let selectedIndex = sender.tag
         travelInfoPlaces[selectedIndex].like?.toggle()
@@ -53,13 +52,15 @@ class TravelInfoTableViewController: UITableViewController {
         
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = travelInfoPlaces[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
         if item.ad {
-            // present modal in fullScreen...
+            let travelADViewController = storyboard.instantiateViewController(withIdentifier: "TravelADViewController") as! TravelADViewController
+            travelADViewController.modalPresentationStyle = .fullScreen
+            travelADViewController.adText = item.title
+            present(travelADViewController, animated: true)
         } else {
-            let storyboard = UIStoryboard(name: "Main", bundle: .main)
             let travelPlaceDetailVC = storyboard.instantiateViewController(
                 withIdentifier: "TravelPlaceDetailViewController"
             ) as! TravelPlaceDetailViewController
