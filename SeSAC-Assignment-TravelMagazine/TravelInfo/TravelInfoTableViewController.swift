@@ -9,7 +9,7 @@ import UIKit
 
 class TravelInfoTableViewController: UITableViewController {
     
-    let travelInfoPlaces = TravelInfo().travel
+    var travelInfoPlaces = TravelInfo().travel
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,13 @@ class TravelInfoTableViewController: UITableViewController {
         tableView.register(TravelCellNib, forCellReuseIdentifier: "TravelInfoTableViewCell")
         tableView.register(addCellNib, forCellReuseIdentifier: "TravelInfoTableAdCell")
         tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    
+    @objc private func likeButtonTapped(_ sender: UIButton) {
+        let selectedIndex = sender.tag
+        travelInfoPlaces[selectedIndex].like?.toggle()
+        sender.isSelected.toggle()
     }
 
     // MARK: - Table view data source
@@ -37,6 +44,8 @@ class TravelInfoTableViewController: UITableViewController {
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TravelInfoTableViewCell") as! TravelInfoTableViewCell
             cell.configure(with: travelInfoPlaces[indexPath.row])
+            cell.likeButton.tag = indexPath.row
+            cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
             return cell
         }
         

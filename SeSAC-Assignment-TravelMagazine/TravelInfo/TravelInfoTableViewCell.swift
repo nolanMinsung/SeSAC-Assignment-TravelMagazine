@@ -22,23 +22,35 @@ class TravelInfoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         placeImageView.layer.cornerRadius = 10
+        likeButton.backgroundColor = .clear
+        likeButton.setImage(.init(systemName: "heart"), for: .normal)
+        likeButton.setImage(.init(systemName: "heart.fill"), for: .selected)
+        let clearImageView = UIImageView()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
         placeImageView.image = nil
+        likeButton.isSelected = false
     }
     
     func configure(with item: Travel) {
+        guard !item.ad else { fatalError() }
         placeNameLabel.text = item.title
         placeDescriptionLabel.text = item.description
         saveInfoLabel.text = "(1,812) • 저장 \(item.save ?? 0)"
+        likeButton.isSelected = item.like!
         
+        // Downsampling 관련 코드는 Kingfisher 사용법 정도만 익힌 수준.
+        // 추후 공부 필요함.
         placeImageView.kf.setImage(
             with: item.imageURL,
-            options: [.processor(DownsamplingImageProcessor(size: placeImageView.frame.size)),
-                      .scaleFactor(UIScreen.main.scale)]
+            options: [
+                .processor(DownsamplingImageProcessor(size: placeImageView.frame.size)),
+                .scaleFactor(UIScreen.main.scale),
+                .cacheMemoryOnly
+            ]
         )
     }
     
