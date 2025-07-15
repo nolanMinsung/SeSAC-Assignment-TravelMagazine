@@ -58,6 +58,66 @@
             </objects>
             <point key="canvasLocation" x="2120" y="18"/>
         </scene>
+        <!--TravelAD View Controller-->
+        <scene sceneID="tiW-nF-SId">
+            <objects>
+                <viewController storyboardIdentifier="TravelADViewController" id="WbR-Ql-o2E" customClass="TravelADViewController" customModule="SeSAC_Assignment_TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nfk-pm-nEq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56D-Mf-4IK">
+                                <rect key="frame" x="30" y="368.66666666666669" width="333" height="114.66666666666669"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="333" id="fJi-71-mrw"/>
+                                </constraints>
+                                <string key="text">도쿄 여행 예약은?
+수업이 있는데 가실 생각은 아니시죠?</string>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pL9-wR-ovn">
+                                <rect key="frame" x="24" y="118" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="hzR-vs-7RK"/>
+                                    <constraint firstAttribute="width" constant="44" id="z9l-tb-vvg"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system" title="">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="semibold"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="WbR-Ql-o2E" eventType="touchUpInside" id="GMX-Om-T9F"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광고 화면" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKH-iv-vZJ">
+                                <rect key="frame" x="156.33333333333334" y="126.99999999999999" width="80.666666666666657" height="26.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DNC-ZH-KJe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="56D-Mf-4IK" firstAttribute="centerX" secondItem="Nfk-pm-nEq" secondAttribute="centerX" id="278-Gc-xAg"/>
+                            <constraint firstItem="aKH-iv-vZJ" firstAttribute="centerX" secondItem="Nfk-pm-nEq" secondAttribute="centerX" id="3K5-wv-3SP"/>
+                            <constraint firstItem="56D-Mf-4IK" firstAttribute="centerY" secondItem="Nfk-pm-nEq" secondAttribute="centerY" id="5aR-BU-NRm"/>
+                            <constraint firstItem="pL9-wR-ovn" firstAttribute="leading" secondItem="DNC-ZH-KJe" secondAttribute="leading" constant="24" id="VO0-Ir-P3m"/>
+                            <constraint firstItem="aKH-iv-vZJ" firstAttribute="centerY" secondItem="pL9-wR-ovn" secondAttribute="centerY" id="kvd-5O-RGE"/>
+                            <constraint firstItem="pL9-wR-ovn" firstAttribute="top" secondItem="DNC-ZH-KJe" secondAttribute="top" id="uCb-ns-ztp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="adTextLabel" destination="56D-Mf-4IK" id="dw3-3r-mCi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Vr-nh-o8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3058.7786259541986" y="433.80281690140845"/>
+        </scene>
         <!--관광지 화면-->
         <scene sceneID="Fln-QM-WJp">
             <objects>
@@ -125,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUB-aD-NHi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3061.8320610687024" y="17.605633802816904"/>
+            <point key="canvasLocation" x="3057" y="-251"/>
         </scene>
         <!--Item-->
         <scene sceneID="LY1-mx-5fe">
@@ -305,6 +365,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
