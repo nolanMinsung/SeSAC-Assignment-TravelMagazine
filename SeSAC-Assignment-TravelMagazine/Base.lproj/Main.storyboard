@@ -58,6 +58,75 @@
             </objects>
             <point key="canvasLocation" x="2120" y="18"/>
         </scene>
+        <!--관광지 화면-->
+        <scene sceneID="Fln-QM-WJp">
+            <objects>
+                <viewController storyboardIdentifier="TravelPlaceDetailViewController" title="관광지 화면" id="5Kp-6s-f2D" customClass="TravelPlaceDetailViewController" customModule="SeSAC_Assignment_TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e4v-zG-myZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9qJ-iq-58u">
+                                <rect key="frame" x="32" y="150" width="329" height="329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9qJ-iq-58u" secondAttribute="height" multiplier="1:1" id="du9-OZ-99L"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ypi-HA-QRC">
+                                <rect key="frame" x="32" y="506" width="329" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카오산 로드" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFb-Zh-LDW">
+                                        <rect key="frame" x="0.0" y="0.0" width="329" height="45.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="38"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="낮과 밤 서로 다른 매력을 지닌 번화한 거리" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agq-io-sZE">
+                                        <rect key="frame" x="0.0" y="52.666666666666629" width="329" height="57.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIZ-ir-rJG">
+                                <rect key="frame" x="98.666666666666686" y="632" width="196" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="196" id="9u5-Xs-d8P"/>
+                                    <constraint firstAttribute="height" constant="42" id="cff-ee-nMP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="다른 관광지 보러 가기" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="popButtonTapped:" destination="5Kp-6s-f2D" eventType="touchUpInside" id="dPi-4C-u9R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bWP-Gq-4ot"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bWP-Gq-4ot" firstAttribute="trailing" secondItem="9qJ-iq-58u" secondAttribute="trailing" constant="32" id="FmR-Fk-bPV"/>
+                            <constraint firstItem="ypi-HA-QRC" firstAttribute="leading" secondItem="bWP-Gq-4ot" secondAttribute="leading" constant="32" id="Hlp-IH-cz4"/>
+                            <constraint firstItem="pIZ-ir-rJG" firstAttribute="centerX" secondItem="e4v-zG-myZ" secondAttribute="centerX" id="LDy-Ev-hus"/>
+                            <constraint firstItem="pIZ-ir-rJG" firstAttribute="top" secondItem="ypi-HA-QRC" secondAttribute="bottom" constant="16" id="Pxj-j1-Zm1"/>
+                            <constraint firstItem="ypi-HA-QRC" firstAttribute="top" secondItem="9qJ-iq-58u" secondAttribute="bottom" constant="27" id="U4V-sD-Xb4"/>
+                            <constraint firstAttribute="trailing" secondItem="ypi-HA-QRC" secondAttribute="trailing" constant="32" id="ao1-yx-nJU"/>
+                            <constraint firstItem="9qJ-iq-58u" firstAttribute="top" secondItem="bWP-Gq-4ot" secondAttribute="top" constant="32" id="lgb-KF-bEB"/>
+                            <constraint firstItem="9qJ-iq-58u" firstAttribute="leading" secondItem="bWP-Gq-4ot" secondAttribute="leading" constant="32" id="q9N-8X-K5A"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="placeDescriptionLabel" destination="Agq-io-sZE" id="bCT-qV-Ia0"/>
+                        <outlet property="placeNameLabel" destination="zFb-Zh-LDW" id="NjV-st-vKA"/>
+                        <outlet property="travelImageView" destination="9qJ-iq-58u" id="CYJ-1L-PXs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUB-aD-NHi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3061.8320610687024" y="17.605633802816904"/>
+        </scene>
         <!--Item-->
         <scene sceneID="LY1-mx-5fe">
             <objects>
