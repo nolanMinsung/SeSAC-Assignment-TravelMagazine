@@ -105,6 +105,9 @@
                                             <segment title="국내"/>
                                             <segment title="해외"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="segmentedControlValueChanged:" destination="D83-eu-IPb" eventType="valueChanged" id="fSn-mD-JzZ"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -131,6 +134,11 @@
                             <constraint firstItem="fk0-zL-uvY" firstAttribute="top" secondItem="wGg-h9-htv" secondAttribute="topMargin" id="tq5-fv-Yjn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityFilteringSegmentedControl" destination="5Aq-dk-BdR" id="9M0-4J-eLT"/>
+                        <outlet property="citySearchBar" destination="3a2-I8-cMu" id="nli-UK-crD"/>
+                        <outlet property="tableView" destination="n9Y-rs-R9h" id="at4-Pj-pX0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfD-mF-8KP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
