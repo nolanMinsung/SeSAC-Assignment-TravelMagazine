@@ -16,6 +16,8 @@ class CitySearchingTableViewCell: UITableViewCell {
     @IBOutlet var placeNameLabel: UILabel!
     @IBOutlet var placeInfoLabel: UILabel!
     
+    var city: City? = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -40,6 +42,7 @@ class CitySearchingTableViewCell: UITableViewCell {
     
     /// 컨텐츠를 채워봅시다.
     func configure(with item: City) {
+        city = item
         placeImageView.kf.setImage(with: item.imageURL)
         placeNameLabel.text = "\(item.koreanName) | \(item.englishName)"
         placeInfoLabel.text = item.explain

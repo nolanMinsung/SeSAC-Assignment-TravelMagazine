@@ -51,16 +51,6 @@
                                 <constraint firstAttribute="trailing" secondItem="lYf-Ok-lFz" secondAttribute="trailing" constant="24" id="mMN-W8-Anm"/>
                             </constraints>
                         </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="V9y-E5-l54">
-                                <rect key="frame" x="0.0" y="183" width="393" height="45"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V9y-E5-l54" id="ig4-Al-spA">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="45"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Kdf-gr-Zdl" id="YOf-7N-8Bt"/>
                             <outlet property="delegate" destination="Kdf-gr-Zdl" id="9Ca-i4-G9u"/>
@@ -158,6 +148,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-tasks-card.png" translatesAutoresizingMaskIntoConstraints="NO" id="AeT-nh-eJC">
                                 <rect key="frame" x="66.666666666666686" y="118" width="260" height="260"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="fP0-Bu-vJy"/>
                                     <constraint firstAttribute="width" secondItem="AeT-nh-eJC" secondAttribute="height" multiplier="1:1" id="jo0-gO-bwt"/>
@@ -214,14 +205,14 @@
                             <constraint firstItem="Y1N-pE-jFI" firstAttribute="top" secondItem="AeT-nh-eJC" secondAttribute="bottom" constant="26" id="TKY-sv-Jch"/>
                             <constraint firstItem="jyF-N5-YyS" firstAttribute="centerY" secondItem="Y1N-pE-jFI" secondAttribute="centerY" id="e5L-S5-6Q4"/>
                             <constraint firstItem="Y1N-pE-jFI" firstAttribute="centerX" secondItem="3Kg-U6-gZZ" secondAttribute="centerX" id="h4U-Uv-F13"/>
-                            <constraint firstItem="0Pa-tJ-wUN" firstAttribute="top" secondItem="jyF-N5-YyS" secondAttribute="bottom" constant="30" id="iW4-Uh-bAe"/>
+                            <constraint firstItem="0Pa-tJ-wUN" firstAttribute="top" secondItem="Y1N-pE-jFI" secondAttribute="bottom" constant="31.333333333333314" id="iW4-Uh-bAe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cityDetailInfoLabel" destination="08S-j4-7QP" id="ZDr-OT-UcG"/>
                         <outlet property="cityImageView" destination="AeT-nh-eJC" id="OA0-pF-HPe"/>
                         <outlet property="cityNameLabelEnglish" destination="UGz-EJ-9Zf" id="SEf-6x-QLc"/>
                         <outlet property="cityNameLabelKorean" destination="jyF-N5-YyS" id="N0j-Ff-FpB"/>
-                        <outlet property="descriptionLabel" destination="08S-j4-7QP" id="ZDr-OT-UcG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odv-Ku-Glt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -254,6 +245,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

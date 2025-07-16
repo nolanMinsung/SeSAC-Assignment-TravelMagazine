@@ -23,6 +23,8 @@ class CitySearchingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.tintColor = .label
+        
         citySearchBar.delegate = self
         
         // table view settings
@@ -88,5 +90,12 @@ extension CitySearchingViewController: UISearchBarDelegate {
 }
 
 extension CitySearchingViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let city = (tableView.cellForRow(at: indexPath) as! CitySearchingTableViewCell).city
+        let detailViewController = storyboard?.instantiateViewController(withIdentifier: "CityDetailViewController") as! CityDetailViewController
+        detailViewController.city = city
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
     
 }
