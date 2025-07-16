@@ -148,6 +148,86 @@
             </objects>
             <point key="canvasLocation" x="831" y="225"/>
         </scene>
+        <!--City Detail View Controller-->
+        <scene sceneID="D05-2p-59y">
+            <objects>
+                <viewController storyboardIdentifier="CityDetailViewController" id="9TW-Hr-5Qu" customClass="CityDetailViewController" customModule="CitySearchingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Kg-U6-gZZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common-tasks-card.png" translatesAutoresizingMaskIntoConstraints="NO" id="AeT-nh-eJC">
+                                <rect key="frame" x="66.666666666666686" y="118" width="260" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="fP0-Bu-vJy"/>
+                                    <constraint firstAttribute="width" secondItem="AeT-nh-eJC" secondAttribute="height" multiplier="1:1" id="jo0-gO-bwt"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1N-pE-jFI">
+                                <rect key="frame" x="195" y="404" width="3" height="26"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="3" id="GhB-72-oBN"/>
+                                    <constraint firstAttribute="height" constant="26" id="b3W-Al-c27"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오사카" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyF-N5-YyS">
+                                <rect key="frame" x="124.66666666666667" y="402.66666666666669" width="62.333333333333329" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Osaka" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGz-EJ-9Zf">
+                                <rect key="frame" x="206" y="402.66666666666669" width="71" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="0Pa-tJ-wUN">
+                                <rect key="frame" x="50" y="461.33333333333331" width="293" height="58.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txu-sv-171">
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방콕, 파타야, 후아힌, 코사멧, 코사무이" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08S-j4-7QP">
+                                        <rect key="frame" x="0.0" y="38" width="293" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4pO-4D-TMb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AeT-nh-eJC" firstAttribute="top" secondItem="4pO-4D-TMb" secondAttribute="top" id="D2d-lw-T8G"/>
+                            <constraint firstItem="UGz-EJ-9Zf" firstAttribute="leading" secondItem="Y1N-pE-jFI" secondAttribute="trailing" constant="8" id="DVt-Ws-G4B"/>
+                            <constraint firstItem="AeT-nh-eJC" firstAttribute="centerX" secondItem="3Kg-U6-gZZ" secondAttribute="centerX" id="GhB-eC-S2B"/>
+                            <constraint firstItem="0Pa-tJ-wUN" firstAttribute="leading" secondItem="4pO-4D-TMb" secondAttribute="leading" constant="50" id="Hmu-Nm-Ifu"/>
+                            <constraint firstItem="UGz-EJ-9Zf" firstAttribute="centerY" secondItem="Y1N-pE-jFI" secondAttribute="centerY" id="QgA-oN-u91"/>
+                            <constraint firstItem="4pO-4D-TMb" firstAttribute="trailing" secondItem="0Pa-tJ-wUN" secondAttribute="trailing" constant="50" id="Qqg-Dx-gKv"/>
+                            <constraint firstItem="Y1N-pE-jFI" firstAttribute="leading" secondItem="jyF-N5-YyS" secondAttribute="trailing" constant="8" id="Sh7-NL-7Nf"/>
+                            <constraint firstItem="Y1N-pE-jFI" firstAttribute="top" secondItem="AeT-nh-eJC" secondAttribute="bottom" constant="26" id="TKY-sv-Jch"/>
+                            <constraint firstItem="jyF-N5-YyS" firstAttribute="centerY" secondItem="Y1N-pE-jFI" secondAttribute="centerY" id="e5L-S5-6Q4"/>
+                            <constraint firstItem="Y1N-pE-jFI" firstAttribute="centerX" secondItem="3Kg-U6-gZZ" secondAttribute="centerX" id="h4U-Uv-F13"/>
+                            <constraint firstItem="0Pa-tJ-wUN" firstAttribute="top" secondItem="jyF-N5-YyS" secondAttribute="bottom" constant="30" id="iW4-Uh-bAe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityImageView" destination="AeT-nh-eJC" id="OA0-pF-HPe"/>
+                        <outlet property="cityNameLabelEnglish" destination="UGz-EJ-9Zf" id="SEf-6x-QLc"/>
+                        <outlet property="cityNameLabelKorean" destination="jyF-N5-YyS" id="N0j-Ff-FpB"/>
+                        <outlet property="descriptionLabel" destination="08S-j4-7QP" id="ZDr-OT-UcG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odv-Ku-Glt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1762.5954198473282" y="224.64788732394368"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="yEG-lz-3fe">
             <objects>
@@ -168,6 +248,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="common-tasks-card.png" width="500" height="275"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
