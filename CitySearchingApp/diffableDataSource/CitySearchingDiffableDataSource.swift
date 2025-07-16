@@ -40,9 +40,9 @@ extension Array where Element == City {
     
     mutating func filterBySearchText(_ searchText: String) {
         self = self.filter {
-            ($0.koreanName.contains(searchText)
-             || $0.englishName.contains(searchText)
-             || $0.explain.contains(searchText))
+            ($0.koreanName.lowercased().contains(searchText.lowercased())
+             || $0.englishName.lowercased().contains(searchText.lowercased())
+             || $0.explain.lowercased().contains(searchText.lowercased()))
         }
     }
     

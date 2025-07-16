@@ -19,25 +19,29 @@ extension String {
     /// 따라서 `iOS 16.0` 미만의 버전에서는 직접 구현하였음. (재귀함수를 이용.)
     ///
     /// 내부에서 사용되는 `range(of:options:range:locale:)` 메서드는 `Foundation` 프레임워크에 구현되어 있기 때문에, 이 함수를 사용하기 위해서는 `Foundation` 프레임워크 `import` 필요
-    func findAllRanges(of text: String) -> [Range<String.Index>] {
+    func findAllRanges(of text: String, caseSensitive: Bool = true) -> [Range<String.Index>] {
+        if caseSensitive {
+            return _findAllRanges(of: text)
+        } else {
+            return lowercased()._findAllRanges(of: text.lowercased())
+        }
+    }
+    
+    private func _findAllRanges(of text: String) -> [Range<String.Index>] {
         if #available(iOS 16.0, *) {
             return ranges(of: text)
         } else {
-            
-            guard let firstOccurredRange = self.range(of: text) else {
-                return []
-            }
+            guard let firstOccurredRange = self.range(of: text) else { return [] }
             
             let remainString = String(self[index(after: firstOccurredRange.upperBound)...endIndex])
-            
             return [firstOccurredRange] + remainString.findAllRanges(of: text)
         }
     }
     
-    func makeColored(with searchText: String, color: UIColor) -> NSAttributedString {
+    func makeColored(with searchText: String, color: UIColor, caseSensitive: Bool = true) -> NSAttributedString {
         let mutableString = NSMutableAttributedString(string: self)
         
-        self.findAllRanges(of: searchText).forEach { range in
+        self.findAllRanges(of: searchText, caseSensitive: caseSensitive).forEach { range in
             mutableString.addAttributes(
                 [.foregroundColor: color],
                 range: NSRange(range, in: self)

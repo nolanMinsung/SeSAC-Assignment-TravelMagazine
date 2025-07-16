@@ -56,8 +56,8 @@ class CitySearchingTableViewCell: UITableViewCell {
     }
     
     func highlighSearchedText(_ searchText: String, color: UIColor) {
-        placeNameLabel.highlightAll(of: searchText, color: color)
-        placeInfoLabel.highlightAll(of: searchText, color: color)
+        placeNameLabel.highlightAll(of: searchText, color: color, caseSensitive: false)
+        placeInfoLabel.highlightAll(of: searchText, color: color, caseSensitive: false)
     }
     
 }
