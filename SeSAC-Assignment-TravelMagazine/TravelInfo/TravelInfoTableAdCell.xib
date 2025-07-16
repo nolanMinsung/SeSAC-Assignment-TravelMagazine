@@ -22,13 +22,13 @@
                         <rect key="frame" x="16" y="16" width="412" height="81"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyk-zc-kSV">
-                                <rect key="frame" x="372" y="4" width="36" height="28"/>
+                                <rect key="frame" x="380" y="4" width="28" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="vBX-rb-FOg"/>
-                                    <constraint firstAttribute="width" constant="36" id="zet-Av-Dhr"/>
+                                    <constraint firstAttribute="height" constant="20" id="vBX-rb-FOg"/>
+                                    <constraint firstAttribute="width" constant="28" id="zet-Av-Dhr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
