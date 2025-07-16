@@ -40,13 +40,24 @@ class CitySearchingTableViewCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        placeNameLabel.attributedText = nil
+        placeInfoLabel.attributedText = nil
+    }
+    
     /// 컨텐츠를 채워봅시다.
     func configure(with item: City) {
         city = item
         placeImageView.kf.setImage(with: item.imageURL)
         placeNameLabel.text = "\(item.koreanName) | \(item.englishName)"
         placeInfoLabel.text = item.explain
-        
+    }
+    
+    func highlighSearchedText(_ searchText: String, color: UIColor) {
+        placeNameLabel.highlightAll(of: searchText, color: color)
+        placeInfoLabel.highlightAll(of: searchText, color: color)
     }
     
 }

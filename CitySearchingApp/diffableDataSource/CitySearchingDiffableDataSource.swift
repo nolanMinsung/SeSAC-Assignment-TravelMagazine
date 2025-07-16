@@ -11,7 +11,7 @@ class CitySearchingDiffableDataSource: UITableViewDiffableDataSource<Int, City> 
     
     let wholeCities = CityInfo().city
     
-    func applySnapshot(searchText: String = "", filteringOption: CityFilteringOption? = nil) {
+    func applySnapshot(searchText: String = "", filteringOption: CityFilteringOption? = nil, completion: (() -> Void)? = nil) {
         var snapshot = NSDiffableDataSourceSnapshot<Int, City>()
         snapshot.appendSections([0])
         
@@ -23,8 +23,7 @@ class CitySearchingDiffableDataSource: UITableViewDiffableDataSource<Int, City> 
         snapshot.appendItems(
             filteredCities
         )
-        
-        self.apply(snapshot)
+        self.apply(snapshot, completion: completion)
     }
     
 }

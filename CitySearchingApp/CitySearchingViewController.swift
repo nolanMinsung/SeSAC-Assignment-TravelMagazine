@@ -19,6 +19,7 @@ class CitySearchingViewController: UIViewController {
     
     private var currentSearchText: String = ""
     private var currentFilteringOption: CityFilteringOption = .all
+    private let highlightColor: UIColor = .systemRed
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +40,13 @@ class CitySearchingViewController: UIViewController {
     
     private func setupDiffableDataSource() {
         let cellProvider: UITableViewDiffableDataSource<Int, City>.CellProvider
-        = { tableView, indexPath, itemIdentifier in
-            
+        = { [weak self] tableView, indexPath, itemIdentifier in
+            guard let self else { fatalError() }
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: "CitySearchingTableViewCell"
             ) as! CitySearchingTableViewCell
             cell.configure(with: itemIdentifier)
+            cell.highlighSearchedText(self.currentSearchText, color: .systemRed)
             return cell
         }
         
@@ -59,7 +61,16 @@ class CitySearchingViewController: UIViewController {
         dataSource.applySnapshot(
             searchText: currentSearchText,
             filteringOption: currentFilteringOption
-        )
+        ) { [weak self] in
+            /// `diffableDataSource`의 경우, 움직이지 않는 셀(?)은 `cell Provider`에서 구현한
+            /// `configure` 및 `highlighSearchedText` 메서드가 호출되지 않기 때문에, 특정 글자에 색을 넣는 동작이 반영되지 않음.
+            /// `apply()` 메서드가 호출되어 필터링이 끝난 직후, 화면에 보이는 모든 셀에서 명시적으로 `highlight`하도록 구현함.
+            guard let self else { return }
+            let visibleCells = self.tableView.visibleCells as! [CitySearchingTableViewCell]
+            visibleCells.forEach { cell in
+                cell.highlighSearchedText(self.currentSearchText, color: self.highlightColor)
+            }
+        }
     }
     
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
