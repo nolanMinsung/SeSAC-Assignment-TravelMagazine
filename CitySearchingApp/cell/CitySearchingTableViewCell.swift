@@ -25,6 +25,19 @@ class CitySearchingTableViewCell: UITableViewCell {
         contentsContainerView.clipsToBounds = true
     }
     
+    // 눌리면 살짝 들어가도록
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        let scale = highlighted ? 0.98 : 1
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0,
+            usingSpringWithDamping: 1,
+            initialSpringVelocity: 1
+        ) {[weak self] in
+            self?.transform = .init(scaleX: scale, y: scale)
+        }
+    }
+    
     /// 컨텐츠를 채워봅시다.
     func configure(with item: City) {
         placeImageView.kf.setImage(with: item.imageURL)
