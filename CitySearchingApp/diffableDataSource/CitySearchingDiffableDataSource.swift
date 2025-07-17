@@ -12,18 +12,28 @@ class CitySearchingDiffableDataSource: UITableViewDiffableDataSource<Int, City> 
     let wholeCities = CityInfo().city
     
     func applySnapshot(searchText: String = "", filteringOption: CityFilteringOption? = nil, completion: (() -> Void)? = nil) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, City>()
-        snapshot.appendSections([0])
+        let snapshot = _getSnapshot(searchText: searchText, filteringOption: filteringOption)
+        self.apply(snapshot, completion: completion)
+    }
+    
+    func applySnapshotUsingReloadData(searchText: String = "", filteringOption: CityFilteringOption? = nil) {
+        let snapshot = _getSnapshot(searchText: searchText, filteringOption: filteringOption)
+        self.applySnapshotUsingReloadData(snapshot)
+    }
+    
+    private func _getSnapshot(searchText: String, filteringOption: CityFilteringOption?) -> NSDiffableDataSourceSnapshot<Int, City> {
         
         var filteredCities = wholeCities
-        
         let trimmtedSearchWord = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         if !trimmtedSearchWord.isEmpty { filteredCities.filterBySearchText(trimmtedSearchWord) }
         if let filteringOption { filteredCities.filterByFilterOption(filteringOption) }
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Int, City>()
+        snapshot.appendSections([0])
         snapshot.appendItems(
             filteredCities
         )
-        self.apply(snapshot, completion: completion)
+        return snapshot
     }
     
 }
