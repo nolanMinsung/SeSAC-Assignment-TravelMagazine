@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -217,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odv-Ku-Glt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1762.5954198473282" y="224.64788732394368"/>
+            <point key="canvasLocation" x="2201" y="571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yEG-lz-3fe">
@@ -235,7 +236,95 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P75-HY-9z7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148.85496183206106" y="-149.29577464788733"/>
+            <point key="canvasLocation" x="-524" y="935"/>
+        </scene>
+        <!--City Searching Collection View Controller-->
+        <scene sceneID="nT1-81-9wk">
+            <objects>
+                <viewController storyboardIdentifier="CitySearchingCollectionViewController" id="elH-3R-5KM" customClass="CitySearchingCollectionViewController" customModule="CitySearchingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2fy-fo-G9N">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bl5-6b-LGO">
+                                <rect key="frame" x="0.0" y="118" width="393" height="126.66666666666669"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Sph-yd-9hI">
+                                        <rect key="frame" x="24" y="0.0" width="345" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="D83-eu-IPb" id="1Tu-K2-wo1"/>
+                                        </connections>
+                                    </searchBar>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cMj-a4-E24">
+                                        <rect key="frame" x="24" y="68" width="345" height="35.666666666666657"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cMj-a4-E24" secondAttribute="height" multiplier="10:1" id="cBo-0P-k54"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="모두"/>
+                                            <segment title="국내"/>
+                                            <segment title="해외"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="cityFilteringSegmentedControlValueChanged:" destination="elH-3R-5KM" eventType="valueChanged" id="6ef-mu-DDd"/>
+                                            <action selector="segmentedControlValueChanged:" destination="D83-eu-IPb" eventType="valueChanged" id="2FL-bx-RNA"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cMj-a4-E24" secondAttribute="bottom" constant="24" id="GRk-Uz-5we"/>
+                                    <constraint firstItem="Sph-yd-9hI" firstAttribute="leading" secondItem="Bl5-6b-LGO" secondAttribute="leading" constant="24" id="T01-aw-yjW"/>
+                                    <constraint firstItem="Sph-yd-9hI" firstAttribute="top" secondItem="Bl5-6b-LGO" secondAttribute="top" id="VkH-Zl-2ea"/>
+                                    <constraint firstItem="cMj-a4-E24" firstAttribute="top" secondItem="Sph-yd-9hI" secondAttribute="bottom" constant="12" id="Y36-Fh-t5d"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sph-yd-9hI" secondAttribute="trailing" constant="24" id="lYv-xb-daE"/>
+                                    <constraint firstAttribute="trailing" secondItem="cMj-a4-E24" secondAttribute="trailing" constant="24" id="qNo-XY-hJi"/>
+                                    <constraint firstItem="cMj-a4-E24" firstAttribute="leading" secondItem="Bl5-6b-LGO" secondAttribute="leading" constant="24" id="y7f-NW-aC8"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AV5-RB-bZp">
+                                <rect key="frame" x="0.0" y="244.66666666666669" width="393" height="539.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LIM-ZW-5Ku">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="F6a-3p-tdS">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q7h-Cw-DHD">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wvP-8M-ASD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AV5-RB-bZp" firstAttribute="top" secondItem="Bl5-6b-LGO" secondAttribute="bottom" id="0T8-HZ-zPM"/>
+                            <constraint firstItem="Bl5-6b-LGO" firstAttribute="trailing" secondItem="wvP-8M-ASD" secondAttribute="trailing" id="4oq-R9-D9x"/>
+                            <constraint firstItem="Bl5-6b-LGO" firstAttribute="top" secondItem="wvP-8M-ASD" secondAttribute="top" id="RtJ-HG-Wh5"/>
+                            <constraint firstItem="Bl5-6b-LGO" firstAttribute="leading" secondItem="wvP-8M-ASD" secondAttribute="leading" id="Xxw-h8-bTi"/>
+                            <constraint firstItem="AV5-RB-bZp" firstAttribute="leading" secondItem="wvP-8M-ASD" secondAttribute="leading" id="bBj-2O-26o"/>
+                            <constraint firstItem="AV5-RB-bZp" firstAttribute="trailing" secondItem="wvP-8M-ASD" secondAttribute="trailing" id="skN-af-VEZ"/>
+                            <constraint firstItem="wvP-8M-ASD" firstAttribute="bottom" secondItem="AV5-RB-bZp" secondAttribute="bottom" id="wvp-KK-SO9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityFilteringSegmentedControl" destination="cMj-a4-E24" id="CER-2R-Qrh"/>
+                        <outlet property="cityListCollectionView" destination="AV5-RB-bZp" id="WOB-qI-mKZ"/>
+                        <outlet property="citySearchBar" destination="Sph-yd-9hI" id="Bgo-dK-OW2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K3J-76-xIf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829.7709923664122" y="918.30985915492965"/>
         </scene>
     </scenes>
     <resources>
@@ -247,7 +336,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
