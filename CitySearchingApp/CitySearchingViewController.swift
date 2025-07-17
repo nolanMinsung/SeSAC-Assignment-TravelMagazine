@@ -94,7 +94,7 @@ class CitySearchingViewController: UIViewController {
 extension CitySearchingViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        currentSearchText = searchText
+        currentSearchText = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         reloadDiffableDataSource()
     }
     

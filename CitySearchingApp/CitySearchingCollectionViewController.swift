@@ -137,7 +137,7 @@ extension CitySearchingCollectionViewController: UICollectionViewDelegate {
 extension CitySearchingCollectionViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        currentSearchText = searchText
+        currentSearchText = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         reloadDiffableDataSource()
     }
     
