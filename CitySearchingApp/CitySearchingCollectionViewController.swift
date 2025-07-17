@@ -34,6 +34,7 @@ class CitySearchingCollectionViewController: UIViewController {
         cityListCollectionView.delegate = self
         setupDiffableDataSource()
         reloadDiffableDataSource()
+        citySearchBar.delegate = self
     }
     
     private func registerCell() {
@@ -108,9 +109,13 @@ class CitySearchingCollectionViewController: UIViewController {
     
     
     @IBAction func cityFilteringSegmentedControlValueChanged(_ sender: UISegmentedControl) {
-        
-        
-        
+        switch sender.selectedSegmentIndex {
+        case 0: currentFilteringOption = .all
+        case 1: currentFilteringOption = .domesticOnly
+        case 2: currentFilteringOption = .foreignOnly
+        default: fatalError("segmented control index out of range.")
+        }
+        reloadDiffableDataSource()
     }
     
     
@@ -118,6 +123,26 @@ class CitySearchingCollectionViewController: UIViewController {
 
 extension CitySearchingCollectionViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let city = (cityListCollectionView.cellForItem(at: indexPath) as! CitySearchingCollectionViewCell).city
+        let detailViewController = storyboard?.instantiateViewController(withIdentifier: "CityDetailViewController") as! CityDetailViewController
+        detailViewController.city = city
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
     
+}
+
+
+// MARK: - UISearchBarDelegate
+extension CitySearchingCollectionViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        currentSearchText = searchText
+        reloadDiffableDataSource()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
     
 }
