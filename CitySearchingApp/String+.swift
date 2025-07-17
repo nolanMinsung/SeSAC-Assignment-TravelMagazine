@@ -32,7 +32,6 @@ extension String {
             return ranges(of: text)
         } else {
             guard let firstOccurredRange = self.range(of: text) else { return [] }
-            
             let remainString = String(self[index(after: firstOccurredRange.upperBound)...endIndex])
             return [firstOccurredRange] + remainString.findAllRanges(of: text)
         }
