@@ -44,7 +44,7 @@ class CitySearchingCollectionViewCell: UICollectionViewCell {
     // 둥글게 둥글게
     func designCornersRounding(cornerRadius: CGFloat) {
         // 셀의 코너는 적당히 부드럽게
-        contentView.layer.cornerRadius = 20
+        contentView.layer.cornerRadius = 35
         contentView.clipsToBounds = true
         
         placeImageView.layer.cornerRadius = cornerRadius
